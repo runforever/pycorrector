@@ -100,4 +100,8 @@ ENV/
 # mypy
 .mypy_cache/
 
+# model output
 output/
+
+# evalution
+eval_corpus_error.json
