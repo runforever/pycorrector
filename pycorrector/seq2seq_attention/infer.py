@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 @author:XuMing(xuming624@qq.com)
-@description: 
+@description:
 """
 import os
 import sys
@@ -24,15 +24,17 @@ def plot_attention(attention, sentence, predicted_sentence, img_path):
     """
     import matplotlib.pyplot as plt
     import matplotlib.ticker as ticker
-    from matplotlib import font_manager
-    my_font = font_manager.FontProperties(fname="/Library/Fonts/Songti.ttc")
+    import matplotlib as mpl
+
+    mpl.rcParams[u'font.sans-serif'] = ['simhei']
+    mpl.rcParams['axes.unicode_minus'] = False
 
     fig = plt.figure(figsize=(10, 10))
     ax = fig.add_subplot(1, 1, 1)
     ax.matshow(attention, cmap='viridis')
     fontdict = {'fontsize': 12}
-    ax.set_xticklabels([''] + sentence, fontdict=fontdict, fontproperties=my_font)  # rotation=90,
-    ax.set_yticklabels([''] + predicted_sentence, fontdict=fontdict, fontproperties=my_font)
+    ax.set_xticklabels([''] + sentence, fontdict=fontdict)  # rotation=90,
+    ax.set_yticklabels([''] + predicted_sentence, fontdict=fontdict)
 
     ax.xaxis.set_major_locator(ticker.MultipleLocator(1))
     ax.yaxis.set_major_locator(ticker.MultipleLocator(1))
