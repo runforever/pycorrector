@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 @author:XuMing(xuming624@qq.com)
-@description: 
+@description:
 """
 import os
 import sys
@@ -66,7 +66,7 @@ def train(train_path='',
     model.train(example_source_batch, dataset, steps_per_epoch, epochs=epochs)
 
     # Evaluate one sentence
-    sentence = "例 如 病 人 必 须 在 思 想 清 醒 时 。"
+    sentence = "具 有 依 法 缴 纳 税 收 和 社 会 保 障 资 金 的 良 好 记 录 ；"
     result, sentence, attention_plot = model.evaluate(sentence)
     print('Input: %s' % sentence)
     print('Predicted translation: {}'.format(result))
